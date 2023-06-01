@@ -23,6 +23,7 @@ defmodule LiveViewAppWeb.Router do
     live("/sandbox", SandboxLive)
     live("/sales", SalesLive)
     live("/flights", FlightLive)
+    live("/boats", BoatsLive)
   end
 
   # Other scopes may use custom stacks.
