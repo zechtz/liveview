@@ -1,4 +1,5 @@
 defmodule LiveViewApp.Sales do
+
   def new_orders do
     Enum.random(5..26)
   end
