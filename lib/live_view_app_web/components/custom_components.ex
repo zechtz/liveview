@@ -20,4 +20,5 @@ defmodule LiveViewAppWeb.CustomComponents do
     </div>
     """
   end
+
 end
