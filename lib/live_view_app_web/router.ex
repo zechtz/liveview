@@ -19,11 +19,12 @@ defmodule LiveViewAppWeb.Router do
 
     get("/", PageController, :home)
 
-    live("/light", LightLive)
+    live("/lights", LightLive)
     live("/sandbox", SandboxLive)
     live("/sales", SalesLive)
     live("/flights", FlightLive)
     live("/boats", BoatsLive)
+    live("/servers", ServersLive)
   end
 
   # Other scopes may use custom stacks.
