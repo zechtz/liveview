@@ -80,6 +80,8 @@ defmodule LiveViewAppWeb.Router do
       live("/topsecrets", TopSecretLive)
       live("/presence", PresenceLive)
       live("/shop", ShopLive)
+      live("/bookings", BookingsLive)
+      live("/desks", DesksLive)
     end
   end
 
