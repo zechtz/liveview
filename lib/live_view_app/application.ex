@@ -17,9 +17,10 @@ defmodule LiveViewApp.Application do
       # Start Finch
       {Finch, name: LiveViewApp.Finch},
       # Start the Endpoint (http/https)
-      LiveViewAppWeb.Endpoint
+      LiveViewAppWeb.Endpoint,
       # Start a worker by calling: LiveViewApp.Worker.start_link(arg)
       # {LiveViewApp.Worker, arg}
+      LiveViewAppWeb.Presence
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
