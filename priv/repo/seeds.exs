@@ -12,6 +12,12 @@
 
 alias LiveViewApp.Repo
 alias LiveViewApp.Boats.Boat
+alias LiveViewApp.Cities
+alias LiveViewApp.Customers
+
+cities = Cities.list_cities()
+customers_count = Enum.count(Customers.list_customers())
+max_customers = Enum.max([max_customers - customers_count, 0])
 
 %Boat{
   model: "1760 Retriever Jon",
@@ -267,3 +273,18 @@ for _i <- 1..200 do
   }
   |> Repo.insert!()
 end
+
+Enum.each(0..max_customers, fn _ -> 
+city = Enum.random(cities)
+  %{
+    name: Faker.Company.En.name(),
+    address: Faker.Address.En.street_address(),
+    city: city.city,
+    latitude: city.latitude,
+    longitude: city.longitude,
+    phone: Faker.Phone.EnUs.phone(),
+    zip: Faker.Address.En.zip_code()
+  }
+  |> LiveViewApp.Customers.create_customer()
+
+end)
