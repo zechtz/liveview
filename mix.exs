@@ -54,6 +54,8 @@ defmodule LiveViewApp.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:faker, "~> 0.17.0"},
       {:number, "~> 1.0"},
+      {:csv, "~> 3.0"},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:timex, "~> 3.7"}
     ]
   end
