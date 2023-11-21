@@ -58,6 +58,8 @@ defmodule LiveViewAppWeb.Router do
       live "/users/reset_password/:token", UserResetPasswordLive, :edit
     end
 
+    get "/sample-csv", CsvController, :index
+
     post "/users/log_in", UserSessionController, :create
   end
 
@@ -69,6 +71,7 @@ defmodule LiveViewAppWeb.Router do
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
 
+      live("/customers/import", CustomerLive.Import, :import)
       live("/lights", LightLive)
       live("/sandbox", SandboxLive)
       live("/sales", SalesLive)
@@ -77,7 +80,7 @@ defmodule LiveViewAppWeb.Router do
       live("/servers", ServersLive)
       live("/donations", DonationsLive)
       live("/volunteers", VolunteersLive)
-      live("/topsecrets", TopSecretLive)
+      live("/topsecret", TopSecretLive)
       live("/presence", PresenceLive)
       live("/shop", ShopLive)
       live("/bookings", BookingsLive)
@@ -97,3 +100,6 @@ defmodule LiveViewAppWeb.Router do
     end
   end
 end
+
+# imagine, opening up a route and automatically getting a websocket connection 
+# that has pub/sub 
