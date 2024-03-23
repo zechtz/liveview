@@ -73,14 +73,14 @@ defmodule LiveViewAppWeb.BoatsLive do
         <div class="prices">
           <%= for price <- ["$", "$$", "$$$"] do %>
             <input
-              type="checkbox"
-              name="prices[]"
-              value={price}
-              id={price}
-              checked={price in @filter.prices}
+            type="checkbox"
+            name="prices[]"
+            value={price}
+            id={price}
+            checked={price in @filter.prices}
             />
             <label for={price}><%= price %></label>
-          <% end %>
+            <% end %>
           <input type="hidden" name="prices[]" value="" />
         </div>
       </div>
@@ -91,8 +91,6 @@ defmodule LiveViewAppWeb.BoatsLive do
   def handle_event("filter", %{"type" => type, "prices" => prices}, socket) do
     filter = %{type: type, prices: prices}
     boats = Boats.list_boats(filter)
-
-    # IO.inspect(filter, label: "FILTERS")
 
     {:noreply, assign(socket, boats: boats, filter: filter)}
   end

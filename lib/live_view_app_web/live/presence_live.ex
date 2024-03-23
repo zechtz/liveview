@@ -6,6 +6,8 @@ defmodule LiveViewAppWeb.PresenceLive do
   @topic "users:video"
 
   def mount(_params, _session, socket) do
+
+
     %{current_user: current_user} = socket.assigns
 
     if connected?(socket) do
